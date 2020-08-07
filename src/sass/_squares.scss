@@ -1,0 +1,49 @@
+
+.square {
+  width: 15px; 
+  height: 15px;
+  background-color:#EEEEEE;
+  display: inline-block; 
+}
+
+.square:nth-child(1) {
+  background-color: #0170C5;
+  margin-left: 2%; 
+}
+
+.box {
+  width: 70%;
+  line-height: 45px; 
+  border: 1px solid #D4D4D4; 
+  border-radius: 10px;  
+  padding: 2%;  
+  color: #555555;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card li {
+  border: solid 1px #D4D4D4;
+  width: calc(33% - 20px);
+  height: 200px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 5%;
+  border-radius: 5px;
+  color: #0071C5;
+}
+
+.card li:hover,
+.card li:focus,
+.card li:focus-within,
+.card li:visited {
+  border: 1px solid #00AEEF;
+  background-color: #F2FAFE;
+  color: #00AEEF;
+}
+

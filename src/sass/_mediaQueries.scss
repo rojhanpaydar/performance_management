@@ -1,0 +1,41 @@
+@media (max-width: 995px) {
+    
+    .card li {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 770px) {
+    
+    .card li {
+        width: 100%;
+    }
+
+    .rightSection,
+    .leftSection {
+        width: 100%;
+        position: inherit;
+        margin: 0 auto; 
+    }
+
+    .box {
+        width: 100%; 
+        text-align: center;
+    }
+
+    .charts {
+        flex-direction: column;
+    }
+
+    nav li {
+        font-size: 15px;
+    }
+
+    nav li:nth-child(2){
+        visibility: hidden;
+    }
+
+    .rightSection {
+        width: 60%; 
+    }
+}

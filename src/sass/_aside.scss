@@ -1,0 +1,35 @@
+
+
+aside {
+  position: fixed;
+  top: 0;  
+  left: 0; 
+  z-index: 5; 
+  height: 100%; 
+  color: white; 
+  background-color: #003C71;
+}
+
+aside button {
+  font-size: 20px;
+  color: white; 
+  background-color: rgba(0, 0, 0, 0); 
+  border-style: none;
+  border: 1px solid black;
+  border-left: none;
+  border-right: none; 
+  width: 100%; 
+  padding: 10px; 
+}
+
+aside button {
+  border-top: none;
+}
+
+aside button:first-child {
+  visibility: hidden;
+}
+
+aside button:nth-child(2) {
+  border-top: 1px solid black; 
+}
