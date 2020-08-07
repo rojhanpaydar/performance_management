@@ -39,3 +39,18 @@
         width: 60%; 
     }
 }
+// smaller screens
+@media (max-width: 450px) {
+
+    nav li:first-child {
+        padding-left: 15%;
+    }
+
+    h1.wrapper {
+        padding-top: 15%; 
+    }
+
+    nav button {
+        font-size: 15px;
+    }
+}
