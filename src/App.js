@@ -20,6 +20,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      inputValue: "Initial Value",
       gaugeData: [],
       areaData: {},
       name: "",
@@ -29,6 +30,24 @@ class App extends Component {
 
     };
   }
+
+  Cards = (props) => {
+    const handleChange = e =>
+      props.handleInputValue(e.target.value);
+
+    return (
+      <Cards onChange={handleChange} />
+    )
+  }
+
+  Charts = props => (
+    <div>
+      <div>{props.inputValue}</div>
+    </div>
+  )
+
+  handleInputValue = (inputValue) =>
+    this.setState({ inputValue })
 
   render() {
 
@@ -44,10 +63,10 @@ class App extends Component {
           <div className="leftSection">
             <Filters />
             {console.log(data)}
-            <Cards />
+            <Cards handleInputValue={this.handleInputValue} />
           </div>
           <div className="rightSection">
-            <Charts />
+            <Charts inputValue={this.state.inputValue} />
           </div>
         </div>
       </div>
