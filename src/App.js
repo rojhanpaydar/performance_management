@@ -14,43 +14,36 @@ import './sass/_squares.scss';
 import './sass/_sections.scss';
 import './sass/_charts.scss';
 import './sass/_mediaQueries.scss';
-
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      inputValue: "Initial Value",
+      inputValue: [],
       gaugeData: [],
       areaData: {},
-      name: "",
-      score: 72,
-      vsly: null,
-      sample: 133,
-
     };
   }
-
   Cards = (props) => {
     const handleChange = e =>
       props.handleInputValue(e.target.value);
-
     return (
       <Cards onChange={handleChange} />
     )
   }
-
   Charts = props => (
     <div>
       <div>{props.inputValue}</div>
     </div>
   )
-
-  handleInputValue = (inputValue) =>
-    this.setState({ inputValue })
-
+  handleInputValue = (val) => {
+    const object = data.areaData[val.name]
+    const chartData = object.map(item => {
+      return item.score;
+    })
+    this.setState({ inputValue: chartData })
+  }
   render() {
-
+    console.log(this.state.inputValue, "chart data")
     return (
       <div>
         <Nav />
@@ -62,8 +55,7 @@ class App extends Component {
           </div>
           <div className="leftSection">
             <Filters />
-            {console.log(data)}
-            <Cards handleInputValue={this.handleInputValue} />
+            <Cards handleInputValue={(val) => this.handleInputValue(val)} />
           </div>
           <div className="rightSection">
             <Charts inputValue={this.state.inputValue} />
@@ -73,5 +65,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

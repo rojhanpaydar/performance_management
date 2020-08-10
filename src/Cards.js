@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import data from "./data.json";
 import ReactApexChart from "react-apexcharts";
-
-
-
-
 class Cards extends Component {
     constructor(props) {
         super(props);
@@ -16,47 +12,16 @@ class Cards extends Component {
                     type: 'radialBar',
                     height: 350,
                 },
-                // dataLabels: {
-                //     enabled: false
-                // },
-                // plotOptions: {
-                //     pie: {
-                //         donut: {
-                //             labels: {
-                //                 show: true,
-                //                 total: {
-                //                     showAlways: true,
-                //                 }
-                //             }
-                //         }
-
-                //     }
-                // },
-                // responsive: [{
-                //     breakpoint: 480,
-                //     options: {
-                //         chart: {
-                //             width: 200
-                //         },
-                //         legend: {
-                //             position: 'bottom'
-                //         }
-                //     }
-                // }]
             },
         };
     }
-
     charts = () => {
         this.setState()
         console.log(this.props);
         return (
             {}
-
         )
-
     }
-
     render() {
         return (
             <div className="wrapper">
@@ -64,17 +29,14 @@ class Cards extends Component {
                     <div class="card">
                         {
                             data.gaugeData.map((cardData) => {
-
                                 return (
-                                    <li onClick={this.charts}>
-                                        {/* {cardData.name}
-                                        {cardData.score} */}
-                                        <div id="chart">
-                                            <ReactApexChart options={this.state.options} series={[cardData.score]} type="radialBar" />
-                                        </div>
-                                        {/* {cardData.vsly}
-                                        {cardData.sample} */}
+                                    <li onClick={() => this.props.handleInputValue(cardData)} key={cardData.name} id="chart">
+                                        <p>{cardData.name}</p>
+                                        <ReactApexChart options={this.state.options} series={[cardData.score]} type="radialBar" />
+                                        <p>{cardData.vsly}</p>
+                                        <p>{cardData.sample}</p>
                                     </li>
+
                                 )
                             })
                         }
@@ -84,5 +46,5 @@ class Cards extends Component {
         );
     }
 }
+export default Cards;
 
-export default Cards; 
